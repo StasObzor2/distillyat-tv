@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Дистиллят TV | Новокубанское — экспертные обзоры коньяка</title>
+    <meta name="description" content="Дистиллят TV: образовательный проект о крепком алкоголе. Честные обзоры коньяка Новокубанское, слепые дегустации, интервью с технологами.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e0cfbc;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .article-banner {
+            max-width: 980px;
+            width: 100%;
+            background: #fffaf3;
+            border-radius: 48px;
+            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.8);
+            overflow: hidden;
+            border: 1px solid #e8d5bc;
+        }
+
+        .article-inner {
+            padding: 48px 52px;
+        }
+
+        .brand-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 2px solid #eedfc8;
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+        }
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .brand-icon {
+            font-size: 2.4rem;
+            filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.1));
+        }
+        .brand-name {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+            color: #2b291c;
+        }
+        .brand-name span {
+            color: #b47a41;
+        }
+        .expert-tag {
+            background: #e9d8c2;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b623b;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #2b2a1e;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+        h1 a {
+            color: #b87a3a;
+            text-decoration: none;
+        }
+        h1 a:hover {
+            text-decoration: underline;
+        }
+        .lead {
+            font-size: 1rem;
+            color: #5c523b;
+            margin-bottom: 32px;
+            border-left: 3px solid #dfbc8c;
+            padding-left: 18px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .author-section {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        .avatar-box {
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .avatar-circle {
+            background: #ede0cf;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+            border: 2px solid #fff0e2;
+        }
+        .avatar-caption {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #a07d50;
+            margin-top: 8px;
+        }
+        .bio-text {
+            flex: 1;
+        }
+        .bio-text p {
+            margin-bottom: 18px;
+            line-height: 1.55;
+            color: #3c3726;
+            font-size: 0.95rem;
+        }
+
+        .full-article {
+            margin-top: 8px;
+        }
+        .full-article h2 {
+            font-size: 1.55rem;
+            margin: 28px 0 14px 0;
+            color: #2f2b1c;
+            font-weight: 600;
+            border-left: 4px solid #c1925c;
+            padding-left: 16px;
+        }
+        .full-article h3 {
+            font-size: 1.25rem;
+            margin: 22px 0 12px 0;
+            color: #9b6a3a;
+            font-weight: 600;
+        }
+        .full-article p {
+            margin-bottom: 18px;
+            line-height: 1.55;
+            color: #3f3a28;
+            font-size: 0.96rem;
+        }
+        .full-article ul, .full-article ol {
+            margin: 12px 0 20px 30px;
+            color: #3f3a28;
+        }
+        .full-article li {
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+        .full-article a {
+            color: #b87a3a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #eedbbd;
+        }
+        .full-article a:hover {
+            border-bottom-color: #b87a3a;
+        }
+
+        /* блок с коньяками от эксперта */
+        .expert-cognacs {
+            background: #f6ede1;
+            border-radius: 28px;
+            padding: 22px 28px;
+            margin: 32px 0 28px;
+            border: 1px solid #ebd8be;
+        }
+        .expert-cognacs p {
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #b47a41;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+        .cognac-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+        .cognac-links a {
+            background: #ffffffdb;
+            padding: 8px 20px;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #5a3f22;
+            text-decoration: none;
+            border: 1px solid #e2cdad;
+            transition: all 0.2s;
+        }
+        .cognac-links a:hover {
+            background: #fff3e6;
+            border-color: #c19560;
+            color: #7b4f24;
+            transform: translateY(-1px);
+        }
+
+        /* сноска */
+        .footer-note {
+            margin: 24px 0 32px 0;
+            padding: 16px 20px;
+            background: #fef7ef;
+            border-radius: 32px;
+            border: 1px solid #eedfc0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.8rem;
+            color: #ab8a5e;
+        }
+        .footer-note span {
+            font-weight: 400;
+        }
+        .footer-note a {
+            color: #946e41;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+        }
+        .footer-note a:hover {
+            border-bottom-color: #b47a41;
+            text-decoration: none;
+        }
+
+        @media (max-width: 720px) {
+            .article-inner {
+                padding: 28px 22px;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .avatar-circle {
+                width: 70px;
+                height: 70px;
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="article-banner">
+    <div class="article-inner">
+        <div class="brand-head">
+            <div class="brand-logo">
+                <span class="brand-icon">🍇🥃</span>
+                <div class="brand-name">Новокубанское · <span>Дистиллят TV</span></div>
+            </div>
+            <div class="expert-tag">эксперт · дистилляты</div>
+        </div>
+
+        <h1><a href="https://www.youtube.com/@DistillatTV" target="_blank" rel="noopener noreferrer">Дистиллят TV</a> – эксперт, блоги и обзоры коньяка</h1>
+        <div class="lead">«Дистиллят TV» – образовательный проект о крепком алкоголе: от коньяка и бренди до виски и рома. Системные обзоры, история, технологии.</div>
+
+        <div class="author-section">
+            <div class="avatar-box">
+                <div class="avatar-circle">📺🥃</div>
+                <div class="avatar-caption">Дистиллят TV</div>
+            </div>
+            <div class="bio-text">
+                <p>«Дистиллят TV» – это образовательный проект, посвященный миру крепкого алкоголя. Автор канала позиционирует себя как эксперт, который помогает потребителю разбираться в сложном мире дистиллятов – от коньяка и бренди до виски и рома. Здесь нет поверхностных «распаковок»: каждый обзор – это погружение в историю марки, технологию производства и честную органолептику.</p>
+                <p>Основная ценность блога – системный подход и готовность делиться реальным опытом, а не рекламными тезисами. Это первый и, пожалуй, самый детальный алкогольный ресурс, где сложные темы становятся доступными без потери глубины.</p>
+            </div>
+        </div>
+
+        <div class="full-article">
+            <h2>О блогере Дистиллят TV</h2>
+            <p>Проект возник как ответ на запрос взыскательной аудитории, которой надоели восторженные «лайки» без фактов. Дистиллят TV успел завоевать доверие более 54 тысяч подписчиков на одном только YouTube-канале. Ключевая особенность: ведущий не просто дегустирует, а выступает в роли проводника. Для него важен каждый этап создания напитка, начиная с вина (для коньячных спиртов) и заканчивая выдержкой в бочке. На канале можно находить ответы на вопросы, которые редко где освещаются: о купажах, регионах и даже о том, как правильно читать этикетку.</p>
+
+            <h2>Стиль подачи и формат контента</h2>
+            <p>Стиль проекта – спокойный, обстоятельный, без пафосного снобизма, но и без панибратства. Формат подачи сочетает в себе классический видео-обзор и элементы подкаста. Автор не боится длительных обсуждений, потому что его цель – научить, а не развлечь. Ключевые черты контента:</p>
+            <p>● главный формат – детальная дегустация одного или нескольких образцов с параллельным разбором технологии и ценообразования;<br>
+            ● регулярно выходят «слепые» дегустация, где мнение эксперта формируется без влияния этикетки и бренда.</p>
+            <p>Отдельная тема, которая раскрывается на площадках Дистиллят TV – авторские рецепты и советы по выбору дистиллята для разных случаев (подарок, домашний бар, вечеринка).</p>
+
+            <h2>Площадки и каналы блогера</h2>
+            <p>Канал Дистиллят TV представлен на нескольких цифровых площадках, чтобы аудитория могла выбрать удобный формат потребления контента. Основная активность сосредоточена на платформах:<br>
+            ● YouTube: главная платформа, где выходят полноценные выпуски, включая видео про коньяк и сравнительные обзоры;<br>
+            ● Дзен: текстовые версии обзоров и короткие заметки;<br>
+            ● Телеграм: оперативные новости, анонсы и общение с аудиторией;<br>
+            ● ВКонтакте: группа для обратной связи и прямых эфиров.</p>
+            <p>Есть и другие площадки. Например, Boosty с эксклюзивным контентом.</p>
+
+            <h2>Обзоры коньяков «Новокубанское»</h2>
+            <p>В рамках знакомства с российский производством канал Дистиллят TV не мог обойти вниманием Коньячный дом «Новокубанское». Интересные обзоры посвящены линейке коньяков, которые представляют собой хороший баланс цены и выдержанного качества. Автор канала провел дегустацию и сделал обзор нескольких позиций:<br>
+            «Н. Некрасов» 25 лет;<br>
+            «Большой Приз» 20 лет;<br>
+            «Камергер» 45 лет;<br>
+            «Кубань» КВВК.</p>
+            <p>Отдельного внимания заслуживает почти двухчасовой обзор коньячного производства ЗАО «Новокубанское». Автор канала посетил само предприятие и взял интервью у лиц, которые занимаются изготовлением напитков.</p>
+
+            <!-- сноска -->
+            <div class="footer-note">
+                <span>🍇 Коньячный дом «Новокубанское» — традиции кубанского виноделия (с 1937 года)</span>
+                <a href="https://novokubanskoe.ru/catalog/" target="_blank" rel="noopener noreferrer">📖 Весь каталог коньяков →</a>
+                <a href="https://www.youtube.com/@DistillatTV" target="_blank" rel="noopener noreferrer">🎥 Смотреть обзоры Дистиллят TV</a>
+            </div>
+
+            <h2>Популярные видео и обзоры</h2>
+            <p>Рейтинг просмотров на канале – лучший показатель востребованности формата. Среди множества материалов особенно выделяются несколько выпусков, которые и формируют лицо Дистиллят TV. Подборка самых обсуждаемых видео:<br>
+            1. Коньяк, который не стоит покупать.<br>
+            2. Лучший коньяк СНГ с выдержкой 3 и 5 лет.<br>
+            3. Несколько частей рейтинга лучших коньяков.</p>
+            <p>Смотреть эти выпуски особенно полезно новичкам, которые делают первые шаги в теме. Но и опытные любители хорошего коньяка однозначно оценят контент.</p>
+
+            <h2>Коньяк, который оценил эксперт</h2>
+            <p>Если вы доверяете системному мнению, то стоит брать на заметку те позиции, которые получили высокую оценку на канале Дистиллят TV. Коньячный дом «Новокубанское» представляет в своем магазине полную линейку напитков, прошедших экспертный анализ:</p>
+            <p>● <a href="https://novokubanskoe.ru/shop/kuban-3" target="_blank" rel="noopener noreferrer"><strong>«Кубань» 3 года</strong></a> – ординарный коньяк с выдержкой 3 года, в аромате которого чувствуются спил фруктового дерева, виноград и сухофрукты, а вкус завершается дубовой терпкостью;<br>
+            ● <a href="https://novokubanskoe.ru/shop/bolsoi-priz-3" target="_blank" rel="noopener noreferrer"><strong>«Большой Приз» 3 года</strong></a> – яркий образец с нотами винограда, абрикоса, инжира и запеченного яблока, на финише – курага и дубовая терпкость;<br>
+            ● <a href="https://novokubanskoe.ru/shop/kuban-8" target="_blank" rel="noopener noreferrer"><strong>«Кубань» 8 лет</strong></a> – коньяк класса КВВК, чей аромат изначально сдержан с древесным тоном, а через несколько минут раскрывается орехово-сухофруктовый букет со специями и абрикосовым вареньем.</p>
+            <p>Это российский продукт, способный составить конкуренцию многим импортным аналогам. Вдумчивый потребитель всегда может находить для себя что-то новое, даже в знакомой категории. Ознакомиться с ассортиментом и выбрать напиток по душе можно в каталоге на официальном сайте.</p>
+
+            <h2>Заключение</h2>
+            <p>Дистиллят TV – это не просто блог, а полноценный образовательный ресурс. За время своего существования проект внес огромный вклад в повышение алкогольной грамотности русскоязычной аудитории. Автор последовательно делится накопленным опытом, не боясь сложных тем и неудобных вопросов. Вы можете подписаться на его каналы, чтобы быть в курсе новых выпусков. И, конечно, пробуйте продукцию сами – лучший эксперт и арбитр – это ваш собственный вкус.</p>
+        </div>
+
+        <!-- блок ссылок на коньяки -->
+        <div class="expert-cognacs">
+            <p>🍇 КОНЬЯКИ, ПОЛУЧИВШИЕ ВЫСОКУЮ ОЦЕНКУ ЭКСПЕРТА</p>
+            <div class="cognac-links">
+                <a href="https://novokubanskoe.ru/shop/kuban-3" target="_blank" rel="noopener noreferrer">«Кубань» 3 года</a>
+                <a href="https://novokubanskoe.ru/shop/bolsoi-priz-3" target="_blank" rel="noopener noreferrer">«Большой Приз» 3 года</a>
+                <a href="https://novokubanskoe.ru/shop/kuban-8" target="_blank" rel="noopener noreferrer">«Кубань» 8 лет (КВВК)</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
